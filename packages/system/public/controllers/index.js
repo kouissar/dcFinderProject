@@ -12,11 +12,11 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
         'image':'/theme/assets/img/makeapoint.png'
       },
       'cactus':{
-        'name':'Cactus Intranet',
-        'text':'Cactus Intranet is an enterprise social network with features like real-time newsfeed, notifications, groups, events, polls, referral system etc. The system has role based permission system, allowing different stakeholders access and controls relevant to them.',
-        'author':'QED42',
-        'link':'http://www.qed42.com',
-        'image':'/theme/assets/img/cactus.png'
+        'name':'Welcome',
+        'text':'DCFinder is a social network with many features like important community places and events, real-time newsfeed, notifications, groups, events, polls, referral system etc. The system has role based permission system, allowing different stakeholders access and controls relevant to them.',
+        'author':'Rk',
+        'link':'http://rafikontest.blogspot.com',
+        'image':'/theme/assets/img/grand_mosque-panorama.jpg'
       }
     };
     $scope.packages = {
