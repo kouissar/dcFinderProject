@@ -23,11 +23,11 @@ angular.module('mean.articles').config(['$stateProvider',
       return deferred.promise;
     };
 
-    // states for my app
+    // states for my app...replace weather list
     $stateProvider
       .state('all articles', {
         url: '/articles',
-        templateUrl: 'articles/views/list.html',
+        templateUrl: 'articles/views/list.html', 
         resolve: {
           loggedin: checkLoggedin
         }
@@ -42,6 +42,13 @@ angular.module('mean.articles').config(['$stateProvider',
       .state('edit article', {
         url: '/articles/:articleId/edit',
         templateUrl: 'articles/views/edit.html',
+        resolve: {
+          loggedin: checkLoggedin
+        }
+      })
+      .state('weather', {
+        url: '/articles/weather',
+        templateUrl: 'articles/views/weather.html',
         resolve: {
           loggedin: checkLoggedin
         }

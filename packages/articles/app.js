@@ -27,6 +27,11 @@ Articles.register(function(app, auth, database) {
     'title': 'Create New Place',
     'link': 'create article'
   });
+    Articles.menus.add({
+    'roles': ['authenticated'],
+    'title': 'Weather',
+    'link': 'weather'
+  });
 
   //Articles.aggregateAsset('js','/packages/system/public/services/menus.js', {group:'footer', absolute:true, weight:-9999});
   //Articles.aggregateAsset('js', 'test.js', {group: 'footer', weight: -1});

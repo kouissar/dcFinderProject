@@ -74,3 +74,34 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
     };
   }
 ]);
+
+//weather
+angular.module('mean.articles').controller('weatherController', function($scope, $http) {
+  $scope.iconBaseUrl = 'http://openweathermap.org/img/w/';
+  
+  var zip = '20004';
+  var base = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=';
+  var unit = 'imperial';
+  // var zip = firstName;
+  var days = '7';
+  var url = base + zip + ',USA&mode=json&units=' + unit + '&cnt=' + days;
+  // example URL "http://api.openweathermap.org/data/2.5/forecast/daily?q=20876,USA&mode=json&units=imperial&cnt=7"
+  $http.get(url).success(function(response) {
+    $scope.names = response;
+  });
+  // Get icon image url
+  $scope.getIconImageUrl = function(iconName) {
+    return (iconName ? $scope.iconBaseUrl + iconName + '.png' : '');
+  };
+});
+
+
+angular.module('mean.articles').filter('timestampToDate', function() {
+  return function(timestamp) {
+    var date = new Date(timestamp * 1000);
+    var dateObject = date.getFullYear() + '-'
+        + ('0' + (date.getMonth() + 1)).slice(-2) + '-'
+        + ('0' + date.getDate()).slice(-2);
+    return dateObject;
+  };
+});
