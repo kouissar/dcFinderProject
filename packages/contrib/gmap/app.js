@@ -16,7 +16,7 @@
 
   //We are adding a link to the main menu for all authenticated users
   Gmap.menus.add({
-    title: 'Map Me',
+    title: 'Places',
     link: 'gmap example page',
     roles: ['authenticated'],
     menu: 'main'

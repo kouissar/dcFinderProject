@@ -95,7 +95,7 @@ angular.module('mean.articles').controller('weatherController', function($scope,
   };
 });
 
-
+//filter
 angular.module('mean.articles').filter('timestampToDate', function() {
   return function(timestamp) {
     var date = new Date(timestamp * 1000);
@@ -103,3 +103,25 @@ angular.module('mean.articles').filter('timestampToDate', function() {
     return dateObject;
   };
 });
+
+//prayer controller
+angular.module('mean.articles').controller(
+        'salatController',
+        function($scope) {
+          $scope.message = 'Trying to make this work, if it does, it will be awesome!';
+          var date = new Date(); // today
+          var times=prayTimes.getTimes(date, [ 39, -77 ], -5);
+          var list = [ 'Fajr', 'Sunrise', 'Dhuhr', 'Asr', 'Maghrib', 'Isha', 'Midnight' ];
+
+          var html = '<table id="timetable">';
+          html += '<tr><th colspan="2">' + date.toLocaleDateString() + '</th></tr>';
+          for ( var i in list) {
+            html += '<tr><td>' + list[i] + '</td>';
+            html += '<td>' + times[list[i].toLowerCase()] + '</td></tr>';
+          }
+          html += '</table>';
+          document.getElementById('table').innerHTML = html;
+});
+
+
+

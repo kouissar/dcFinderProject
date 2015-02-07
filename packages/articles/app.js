@@ -19,18 +19,23 @@ Articles.register(function(app, auth, database) {
   //We are adding a link to the main menu for all authenticated users
   Articles.menus.add({
     'roles': ['authenticated'],
-    'title': 'Places',
+    'title': 'Events',
     'link': 'all articles'
   });
   Articles.menus.add({
     'roles': ['authenticated'],
-    'title': 'Create New Place',
+    'title': 'Create New Event',
     'link': 'create article'
   });
-    Articles.menus.add({
+  Articles.menus.add({
     'roles': ['authenticated'],
     'title': 'Weather',
     'link': 'weather'
+  });
+  Articles.menus.add({
+    'roles': ['authenticated'],
+    'title': 'Prayer Times',
+    'link': 'salat'
   });
 
   //Articles.aggregateAsset('js','/packages/system/public/services/menus.js', {group:'footer', absolute:true, weight:-9999});
