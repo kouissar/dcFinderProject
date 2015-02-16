@@ -1,66 +1,101 @@
 <div data-ng-controller="GmapController">
-	<tabset>
-		
-		<tab heading="Example">
-			<h2>Map</h2>
-			<div class="col-md-4 col-lg-8 example-block alt">
-				<div class="span3 bs-docs-sidebar">
-					<div class="angular-google-map-container">
-						<div id="gmap">
-							<google-map center="mymap.center" zoom="mymap.zoom" draggable="true" dragging="mymap.dragging">
-							<marker pan="true" idKey='$index' data-ng-repeat="gmarker in markers" coords="gmarker.coords" ></marker>
-							</google-map>
-						</div>
-					</div>
+	<!-- replace map with Gmap -->
+
+	<tabset> <tab heading="Community Places">
+	<h2>Map</h2>
+	<div class="col-md-4 col-lg-8 example-block alt">
+		<div class="span3 bs-docs-sidebar">
+			<div class="angular-google-map-container">
+				<div id="gmap">
+					<!-- replace map with mymap -->
+					<!-- <google-map center="map.center" zoom="map.zoom" draggable="true" dragging="map.dragging"> -->
+					<!-- <marker pan="true" idKey='$index' data-ng-repeat="gmarker in markers" coords="gmarker.coords" ></marker> -->
+					<!-- <markers models="map.markers" coords="'self'" options="'options'" isLabel='true'> </markers> -->
+					<!-- </google-map> -->
+
+					<google-map center="map.center" zoom="map.zoom" draggable="true"
+						options="map.options" control="map.control"> <markers
+						models="map.markers" coords="'self'" options="'options'"
+						isLabel='true'> </markers> </google-map>
 				</div>
 			</div>
-  			<div class="greyside col-md-8 col-lg-4 example-block">
-  				<form id="form" role="form">
-	    				<div class="form-group">
-	        				<label for="Autocomplete">Generic Autocomplete</label>
-	        				<input type="text" id="Autocomplete" class="form-control" ng-autocomplete ng-model="result1" details="details1"/>
+		</div>
+	</div>
+	<div class="greyside col-md-8 col-lg-4 example-block">
+		<form id="form" role="form">
+			<div class="form-group">
+				<!-- new code -->
+
+				<button class="btn btn-default btn-lg"
+					ng-click="addCurrentLocation()">Current location</button>
+				<input type="text" placeholder="Zip code, address, or city name"
+					ng-model="address" />
+
+				<button class="btn btn-primary btn-lg" data-ng-click="addAddress()">Search</button>
+				<h4>here is the address: {{address}}</h4>
+				<h5>here is the message: {{message}}</h5>
+
+
+				<!--    <button ng-click="addCurrentLocation()">Current location</button>      
+                <input type="text" placeholder="enter address" ng-model="address" style="width: 210px"/>
+                <button ng-click="addAddress()">Search</button>    -->
+
+
+				<!-- old -->
+				<!-- 
+		<label for="Autocomplete">Generic Autocomplete</label>
+	        				<input type="text" id="Autocomplete" class="form-control" ng-autocomplete ng-model="address" details="details1"/>
 	    				</div>
-	    				<div data-ng-show="details1">Found {{details1.address_components[0].long_name}} located at lat:{{details1.geometry.location.k}} , lng:{{details1.geometry.location.B}} </div>
+	    				<button ng-click="addAddress()">Look up!</button> 
+	    				
+	    				<div data-ng-show="address">Found {{address.address_components[0].long_name}} located at lat:{{address.geometry.location.k}} , lng:{{address.geometry.location.B}} </div>
 	    				<button data-ng-show="details1" data-ng-click="addMarker(details1.geometry.location)">Add marker</button>
 					</form>
+ -->
 			</div>
-		</tab>
-		<tab heading="Overview">
+	</tab> <tab heading="Related">
 
-			<div class="col-md-4 col-lg-8 example-block alt">			
-			<h2>Overview</h2>
-				The gmap package overall target is to provide an implementation of a fullstack package that collects location data from a object and displays it on a map.<br/>
-				<div class="alert alert-info" role="alert">
-				Note this is a work in progress and currently we have implemented only the client side.</div>
-				The package is based on two excellent open source directives.
-				<ol>
-					<li><a href="https://angular-ui.github.io/angular-google-maps/#!/">Google maps for Angular.js</a>
-					</li>
-					<li><a href="http://ngmodules.org/modules/ngAutocomplete">ngAutocomplete</a>
-					</li>
-				</ol>
-				The full documentation resides in the links above but to quickly start you will need to use the <code>&lt;google-map&gt;</code> directive to create a map like this...
-				<code>
-					&lt;google-map center=&quot;mymap.center&quot; zoom=&quot;mymap.zoom&quot; 
-					draggable=&quot;true&quot; dragging=&quot;mymap.dragging&quot;&gt;
-		</code>
-			   and add markers using the marker directive like this..
-			   <code>
-			   	&lt;marker pan=&quot;true&quot; idKey='$index' data-ng-repeat=&quot;gmarker in markers&quot; coords=&quot;gmarker.coords&quot; &gt;&lt;/marker&gt;
-			   </code>
-			   and close the map like this -
-			   <code>&lt;/google-map&gt;</code>
-			
-				<p>We have blogged about the process of developing this package <a href-"http://blog.mean.io/2014/08/build-a-package-gmap/">here</p>
-			</div>
-  			<div class="greyside col-md-8 col-lg-4 example-block">
-  				<h2>Notes and Cool tips</h2>
-  				<ol>
-  					<li>You can play with the default settings of the map using it's invocation in gmap/public/controllers/gmap.js</li>
-  					<li>Try to mix gmap with the socket package - imagine pushing a mobile device location and seeing it move on the map using the socket packge. :)</li>
-  				</ol>
-  			</div>
-		</tab>
+	<div class="col-md-4 col-lg-8 example-block alt">
+		<h2>Overview</h2>
+		The gmap package overall target is to provide an implementation of a
+		fullstack package that collects location data from a object and
+		displays it on a map.<br />
+		<div class="alert alert-info" role="alert">Note this is a work
+			in progress and currently we have implemented only the client side.</div>
+		The package is based on two excellent open source directives.
+		<ol>
+			<li><a
+				href="https://angular-ui.github.io/angular-google-maps/#!/">Google
+					maps for Angular.js</a></li>
+			<li><a href="http://ngmodules.org/modules/ngAutocomplete">ngAutocomplete</a>
+			</li>
+		</ol>
+		The full documentation resides in the links above but to quickly start
+		you will need to use the
+		<code>&lt;google-map&gt;</code>
+		directive to create a map like this...
+		<code> &lt;google-map center=&quot;mymap.center&quot;
+			zoom=&quot;mymap.zoom&quot; draggable=&quot;true&quot;
+			dragging=&quot;mymap.dragging&quot;&gt; </code>
+		and add markers using the marker directive like this..
+		<code> &lt;marker pan=&quot;true&quot; idKey='$index'
+			data-ng-repeat=&quot;gmarker in markers&quot;
+			coords=&quot;gmarker.coords&quot; &gt;&lt;/marker&gt; </code>
+		and close the map like this -
+		<code>&lt;/google-map&gt;</code>
 
-	</tabset>
+		<p>
+			We have blogged about the process of developing this package <ahref-"http://blog.mean.io/2014/08/build-a-package-gmap/">here</p>
+	</div>
+	<div class="greyside col-md-8 col-lg-4 example-block">
+		<h2>Notes and Cool tips</h2>
+		<ol>
+			<li>You can play with the default settings of the map using it's
+				invocation in gmap/public/controllers/gmap.js</li>
+			<li>Try to mix gmap with the socket package - imagine pushing a
+				mobile device location and seeing it move on the map using the
+				socket packge. :)</li>
+		</ol>
+	</div>
+	</tab> </tabset>
 </div>

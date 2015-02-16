@@ -74,6 +74,12 @@
     global: true,
     absolute: false
   });
+  
+    Gmap.aggregateAsset('js', '../lib/loadash.underscore.min.js',{
+    weight: 3,
+    global: true,
+    absolute: false
+  });
 
   /*
 
