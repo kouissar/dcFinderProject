@@ -13,7 +13,8 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
       if (isValid) {
         var article = new Articles({
           title: this.title,
-          content: this.content
+          content: this.content,
+          edate: this.edate
         });
         article.$save(function(response) {
           $location.path('articles/' + response._id);
@@ -21,6 +22,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
 
         this.title = '';
         this.content = '';
+        this.edate = '';
       } else {
         $scope.submitted = true;
       }
@@ -110,13 +112,14 @@ angular.module('mean.articles').controller(
         function($scope) {
           $scope.message = 'Trying to make this work, if it does, it will be awesome!';
           var date = new Date(); // today
+          var prayTimes = new PrayTimes();
           var times=prayTimes.getTimes(date, [ 39, -77 ], -5);
           var list = [ 'Fajr', 'Sunrise', 'Dhuhr', 'Asr', 'Maghrib', 'Isha', 'Midnight' ];
 
-          var html = '<table id="timetable">';
-          html += '<tr><th colspan="2">' + date.toLocaleDateString() + '</th></tr>';
+          var html = '<table class="table table-hover" id="timetable">';
+          html += '<tr class="success"><th colspan="2">' + date.toLocaleDateString() + '</th></tr>';
           for ( var i in list) {
-            html += '<tr><td>' + list[i] + '</td>';
+            html += '<tr><td><b>' + list[i] + '</b></td>';
             html += '<td>' + times[list[i].toLowerCase()] + '</td></tr>';
           }
           html += '</table>';

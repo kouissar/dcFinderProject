@@ -25,13 +25,20 @@
 		<form id="form" role="form">
 			<div class="form-group">
 				<!-- new code -->
-
-				<button class="btn btn-default btn-lg"
-					ng-click="addCurrentLocation()">Current location</button>
-				<input type="text" placeholder="Zip code, address, or city name"
+<div>
+				<div>
+				<input type="text" class="form-control" placeholder="Zip code, address, or city name"
 					ng-model="address" />
-
-				<button class="btn btn-primary btn-lg" data-ng-click="addAddress()">Search</button>
+				</div>
+			</div>
+				<div>
+				<button class="btn btn-info"
+					ng-click="addCurrentLocation()">Current location</button>
+				</div>
+	
+				<div>
+				<button class="btn btn-info" data-ng-click="addAddress()">Search</button>
+			</div>
 				<h4>here is the address: {{address}}</h4>
 				<h5>here is the message: {{message}}</h5>
 
@@ -53,6 +60,8 @@
 					</form>
  -->
 			</div>
+		</div>
+
 	</tab> <tab heading="Related">
 
 	<div class="col-md-4 col-lg-8 example-block alt">

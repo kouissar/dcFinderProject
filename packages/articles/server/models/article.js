@@ -25,6 +25,11 @@ var ArticleSchema = new Schema({
     required: true,
     trim: true
   },
+    edate: {
+    type: Date,
+    required: true,
+    trim: true
+  },
   user: {
     type: Schema.ObjectId,
     ref: 'User'
@@ -37,7 +42,9 @@ var ArticleSchema = new Schema({
 ArticleSchema.path('title').validate(function(title) {
   return !!title;
 }, 'Title cannot be blank');
-
+ArticleSchema.path('edate').validate(function(edate) {
+  return !!edate;
+}, 'Date cannot be blank');
 ArticleSchema.path('content').validate(function(content) {
   return !!content;
 }, 'Content cannot be blank');

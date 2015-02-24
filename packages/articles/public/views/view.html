@@ -2,6 +2,7 @@
   <span>{{article.created | date:'medium'}}</span> /
   <span>{{article.user.name}}</span>
   <h2>{{article.title}}</h2>
+  <div>Date: {{article.edate | date:'medium'}}</div>
   <div data-ng-if="hasAuthorization(article)">
     <a class="btn" href="/#!/articles/{{article._id}}/edit">
       <i class="glyphicon glyphicon-edit"></i>
@@ -10,5 +11,5 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
-  <div>{{article.content}}</div>
+  <div>Description: {{article.content}}</div>
 </section>
