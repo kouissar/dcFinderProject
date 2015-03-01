@@ -9,7 +9,7 @@ module.exports = {
     debug: false
   },
   app: {
-    name: 'CommunityCal - Community Events'
+    name: 'CommunityCal - Community Events - Dev'
   },
   facebook: {
     clientID: 'DEFAULT_APP_ID',
