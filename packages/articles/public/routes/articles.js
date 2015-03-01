@@ -28,9 +28,9 @@ angular.module('mean.articles').config(['$stateProvider',
       .state('all articles', {
         url: '/articles',
         templateUrl: 'articles/views/list.html', 
-        resolve: {
-          loggedin: checkLoggedin
-        }
+  //       resolve: {
+//           loggedin: checkLoggedin
+//         }
       })
       .state('create article', {
         url: '/articles/create',
@@ -49,16 +49,16 @@ angular.module('mean.articles').config(['$stateProvider',
       .state('salat', {
         url: '/articles/salat',
         templateUrl: 'articles/views/salat.html',
-        resolve: {
-          loggedin: checkLoggedin
-        }
+ //        resolve: {
+//           loggedin: checkLoggedin
+//         }
       })
       .state('weather', {
         url: '/articles/weather',
         templateUrl: 'articles/views/weather.html',
-        resolve: {
-          loggedin: checkLoggedin
-        }
+//         resolve: {
+//           loggedin: checkLoggedin
+//         }
       })
       .state('article by id', {
         url: '/articles/:articleId',

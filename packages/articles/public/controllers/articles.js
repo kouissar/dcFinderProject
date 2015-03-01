@@ -2,8 +2,9 @@
 
 angular.module('mean.articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', '$log', 'Global',  'Articles',
   function($scope, $stateParams, $location, $log, Global, Articles) {
- // $scope.etime = new Date();
 
+  
+  // Time Picker
   $scope.hstep = 1;
   $scope.mstep = 15;
 
