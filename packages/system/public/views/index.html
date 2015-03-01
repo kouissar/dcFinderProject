@@ -1,16 +1,20 @@
 <section class="welcome container-fluid" data-ng-controller="IndexController">
-  <div class="col-md-12 first">
-    <div> Discover a new world of DC community resources with CommunityCal</div>
-    </div>
-    <div class="col-md-12 row">
-    <div class="info col-md-6">
+ <div class="jumbotron">
+  <h2>Discover your community once again with CommunityCal</h2>
+  <div>CommunityCal is a social network designed to consolidate important community driven events in one place. In addition, the network offers many other features like Prayer times and local weather.
+        The application has role based permission system, so events are viewed or submitted only by registred users.</div>
+  <p><a class="btn btn-primary btn-lg" ui-sref="about" role="button">Learn more</a></p>
+</div
+ 
+   <div class="col-md-12 row">
+   
+ 
+   <!-- 
+ <div class="info col-md-6">
       <div class="docs">
         <div class="welcome-sprite"></div>
         <h3>Be part of your community</h3>
         <p class="docs-desc">
-        Community Calendar is a social network with many features like important community places and events, real-time newsfeed, 
-        notifications, groups, events, polls, referral system etc. The system has role based permission system, allowing different 
-        stakeholders access and controls relevant to them.
         CommunityCal strives to bring people together by keeping them informed about events happening in their communities.<br/>
         Be one of the first to explore the latest events or perhaps submit new events, sure why not? <a href="http://learn.mean.io/">learn more</a>.
         </p>
@@ -34,6 +38,8 @@
         </div>
       <span class="morelink"><a href="http://mean.io/#!/docs">All Documentation</a></span>
       </div>
+ -->
+ 
  <!-- 
      <div class="packages">
         <div class="welcome-sprite"></div>
@@ -57,41 +63,48 @@
         <span class="morelink"><a href="http://mean.io/#!/packages">All Packages</a></span>
       </div>
  -->
+ <div class="info col-md-6">
       <div class="community">
         <div class="welcome-sprite"></div>
         <h3>Join our community</h3>
-          <i class="socialsprite sprite-facebook"></i>
+ <!-- 
+         <i class="socialsprite sprite-facebook"></i>
           <div class="package">
             <h4><a href="https://www.facebook.com/groups/mean.io/">Facebook group</a></h4>
             <p>Informal support, news and just hanging out</p>
           </div>
-            <i class="socialsprite sprite-irc"></i>
+ -->
+ <!-- 
+       <i class="socialsprite sprite-irc"></i>
           <div class="package">
             <h4><a href="https://gitter.im/linnovate/mean">Gitter</a></h4>
             <p>Support and Technical discussions</a></p>
           </div>
+ -->
         <i class="socialsprite sprite-github"></i>
         <div class="package">
-          <h4><a href="http://github.com/linnovate/mean">Github</a></h4>
+          <h4><a href="https://github.com/kouissar/dcFinderProject">Github</a></h4>
           <p>Issues, Support, Code discussions and PRs</p>
         </div>
+<!-- 
         <i class="socialsprite sprite-stackoverflow"></i>
         <div class="package">
           <h4><a href="http://hangout.mean.io">Hangout</a></h4>
           <p>Video support, shared coding and to meet the people behind mean.io</p>
         </div>
+ -->
       </div>
     </div>
     <div class="featured col-md-6">
       <div class="featured-sites">
-        <h2>Get Inspired</h2>
+        <h2>Be part of this...</h2>
         <div class="featuredpic">
           <img ng-src="{{sites.cactus.image}}"/>
         </div>
         <h4>{{sites.cactus.name}} <span>by
           <a href="{{sites.cactus.link}}">{{sites.cactus.author}}</a></span></h4>
           <p>{{sites.cactus.text}}</p>
-        <span class="morelink"><a href="http://builtwith.mean.io">Built with MEAN</a></span>
+        <!-- <span class="morelink"><a href="http://builtwith.mean.io">Built with MEAN</a></span> -->
       </div>
  <!-- 
      <div class="featured-packages">

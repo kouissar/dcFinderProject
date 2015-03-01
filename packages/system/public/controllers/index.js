@@ -12,8 +12,8 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
         'image':'/theme/assets/img/makeapoint.png'
       },
       'cactus':{
-        'name':'Welcome',
-        'text':'Welcome to your CommunityCal. Please log in to see latest event or submit a new one. If you are not a member, please join today by clicking the Join button, it should take only a minute and it is free.',
+        'name':'Submit new Events',
+        'text':'Welcome to your CommunityCal. Please log in to submit a new event. If you are not a member, please join today by clicking the Join button. It should take only a minute and it is free.',
         'author':'Admin',
         'link':'http://rafikontest.blogspot.com',
         'image':'/theme/assets/img/dcf1.jpg'

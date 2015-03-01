@@ -9,7 +9,7 @@ module.exports = {
     debug: false
   },
   app: {
-    name: 'MEAN - FullStack JS - Development'
+    name: 'CommunityCal - Community Events'
   },
   facebook: {
     clientID: 'DEFAULT_APP_ID',
