@@ -9,7 +9,17 @@
         </div>
       </div>
     </div>
-   <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.edate.$invalid }">
+    <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.eplace.$invalid }">
+      <label mean-token="'edit-eplace'" for="eplace" class="col-md-2 control-label">Location</label>
+      <div class="col-md-10">
+        <input name="eplace" type="text" class="form-control" data-ng-model="article.eplace" id="eplace" placeholder="Event Location" required>
+        <div ng-show="submitted && articleForm.eplace.$invalid" class="help-block">
+          <p ng-show="articleForm.eplace.$error.required">Location is required</p>
+        </div>
+      </div>
+    </div>
+  <!-- 
+ <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.edate.$invalid }">
       <label mean-token="'edit-edate'" for="edate" class="col-md-2 control-label">When</label>
       <div class="col-md-10">
         <input name="edate" type="text" class="form-control" data-ng-model="article.edate" id="edate" placeholder="Event Date" required>
@@ -18,12 +28,35 @@
         </div>
       </div>
     </div>
+ -->
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.edate.$invalid }">
+      <label mean-token="'create-edate'" class="col-md-3 control-label">Date</label>
+      <div class="col-md-9">
+        <datepicker name="edate" min-date="minDate" show-weeks="true" class="well well-sm" data-ng-model="article.edate" id="edate" placeholder="Event Date" required></datepicker>
+        <div ng-show="submitted && articleForm.edate.$invalid" class="help-block">
+          <p ng-show="articleForm.edate.$error.required">Date is required</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.etime.$invalid }">
+      <label mean-token="'create-etime'" class="col-md-3 control-label">Time</label>
+      <div class="col-md-9">
+        <timepicker data-ng-model="article.etime" name="etime" id="etime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required></timepicker>
+        <div ng-show="submitted && articleForm.etime.$invalid" class="help-block">
+        <pre class="alert alert-info">Time is: {{etime | date:'shortTime' }}</pre>
+          <p ng-show="articleForm.etime.$error.required">Time is required</p>
+        </div>
+      </div>
+    </div>
+    
     <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.content.$invalid }">
-      <label mean-token="'edit-content'" for="content" class="col-md-2 control-label">Content</label>
+      <label mean-token="'edit-content'" for="content" class="col-md-2 control-label">Description</label>
       <div class="col-md-10">
         <textarea name="content" data-ng-model="article.content" id="content" cols="30" rows="10" placeholder="Content" class="form-control" required></textarea>
         <div ng-show="submitted && articleForm.content.$invalid" class="help-block">
-          <p ng-show="articleForm.content.$error.required">Content is required</p>
+          <p ng-show="articleForm.content.$error.required">Description is required</p>
         </div>
       </div>
     </div>

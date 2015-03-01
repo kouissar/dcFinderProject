@@ -30,6 +30,16 @@ var ArticleSchema = new Schema({
     required: true,
     trim: true
   },
+    etime: {
+    type: Date,
+    required: true,
+    trim: true
+  },
+    eplace: {
+    type: String,
+    required: true,
+    trim: true
+  },
   user: {
     type: Schema.ObjectId,
     ref: 'User'
@@ -45,6 +55,12 @@ ArticleSchema.path('title').validate(function(title) {
 ArticleSchema.path('edate').validate(function(edate) {
   return !!edate;
 }, 'Date cannot be blank');
+ArticleSchema.path('etime').validate(function(etime) {
+  return !!etime;
+}, 'Time cannot be blank');
+ArticleSchema.path('eplace').validate(function(eplace) {
+  return !!eplace;
+}, 'Location cannot be blank');
 ArticleSchema.path('content').validate(function(content) {
   return !!content;
 }, 'Content cannot be blank');

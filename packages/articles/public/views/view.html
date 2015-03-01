@@ -1,8 +1,13 @@
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+ <div class="alert alert-success"> 
   <span>{{article.created | date:'medium'}}</span> /
   <span>{{article.user.name}}</span>
+ </div> 
   <h2>{{article.title}}</h2>
-  <div>Date: {{article.edate | date:'medium'}}</div>
+  <div><b>Date: </b>{{article.edate | date:'fullDate'}}</div>
+  <div><b>Time: </b>{{article.etime | date:'shortTime'}}</div>
+  <div><b>Location: </b>{{article.eplace}}</div>
+  <div><b>Description: </b>{{article.content}}</div>
   <div data-ng-if="hasAuthorization(article)">
     <a class="btn" href="/#!/articles/{{article._id}}/edit">
       <i class="glyphicon glyphicon-edit"></i>
@@ -11,5 +16,4 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
-  <div>Description: {{article.content}}</div>
 </section>

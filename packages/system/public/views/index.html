@@ -1,25 +1,28 @@
 <section class="welcome container-fluid" data-ng-controller="IndexController">
   <div class="col-md-12 first">
-    Discover a new world of community resources with DCFinder
+    <div> Discover a new world of DC community resources with CommunityCal</div>
     </div>
     <div class="col-md-12 row">
     <div class="info col-md-6">
       <div class="docs">
         <div class="welcome-sprite"></div>
-        <h3>Browse the  Documentation</h3>
+        <h3>Be part of your community</h3>
         <p class="docs-desc">
-        Before you jump in it's important to read the documentation and learn about the different aspects and resources available via DCFinder.<br/>
-        This is a Mean app and it is based on MongoDB, Express.js, Angular.js and Node.js <a href="http://learn.mean.io/">learn more</a>.
+        Community Calendar is a social network with many features like important community places and events, real-time newsfeed, 
+        notifications, groups, events, polls, referral system etc. The system has role based permission system, allowing different 
+        stakeholders access and controls relevant to them.
+        CommunityCal strives to bring people together by keeping them informed about events happening in their communities.<br/>
+        Be one of the first to explore the latest events or perhaps submit new events, sure why not? <a href="http://learn.mean.io/">learn more</a>.
         </p>
         <div class="docs-link first">
           <ul>
             <li><a href="http://learn.mean.io/#mean-technologies">Overview</a></li>
-            <li><a href="http://learn.mean.io/#mean-packages">Packages</a></li>
+            <li><a href="http://learn.mean.io/#mean-packages">Contacts</a></li>
           </ul>
         </div>
         <div class="docs-link">
           <ul>
-            <li><a href="http://learn.mean.io/#mean-cli">CLI</a></li>
+            <li><a href="http://learn.mean.io/#mean-cli">Community</a></li>
             <li><a href="http://learn.mean.io/#mean-mean-network">Network</a></li>
           </ul>
         </div>
@@ -31,7 +34,8 @@
         </div>
       <span class="morelink"><a href="http://mean.io/#!/docs">All Documentation</a></span>
       </div>
-      <div class="packages">
+ <!-- 
+     <div class="packages">
         <div class="welcome-sprite"></div>
         <h3>Browse our packages</h3>
         <div class="package">
@@ -52,6 +56,7 @@
         </div>
         <span class="morelink"><a href="http://mean.io/#!/packages">All Packages</a></span>
       </div>
+ -->
       <div class="community">
         <div class="welcome-sprite"></div>
         <h3>Join our community</h3>
@@ -88,16 +93,18 @@
           <p>{{sites.cactus.text}}</p>
         <span class="morelink"><a href="http://builtwith.mean.io">Built with MEAN</a></span>
       </div>
-      <div class="featured-packages">
-        <h2>Featured Package</h2>
+ <!-- 
+     <div class="featured-packages">
+        <h2>Featured Event</h2>
         <div class="featuredpic">
-          <img ng-src="{{packages.gmap.image}}"/>
+          <img ng-src="{{packages.events.image}}"/>
         </div>
-        <h4>{{packages.gmap.name}} <span>by
-          <a href="{{sites.makeapoint.link}}">{{packages.gmap.author}}</a></span></h4>
-          <p>{{packages.gmap.text}}</p>
-        <span class="morelink"><a href="http://builtwith.mean.io">All Packages</a></span>
+        <h4>{{packages.events.name}} <span>by
+          <a href="{{sites.makeapoint.link}}">{{packages.events.author}}</a></span></h4>
+          <p>{{packages.events.text}}</p>
+        <span data-ng-controller="ArticlesController" class="morelink"><a href="#articles">All events</a></span>
       </div>
+ -->
     </div>
   </div>
 </section>

@@ -1,7 +1,37 @@
 'use strict';
 
-angular.module('mean.articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Global', 'Articles',
-  function($scope, $stateParams, $location, Global, Articles) {
+angular.module('mean.articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', '$log', 'Global',  'Articles',
+  function($scope, $stateParams, $location, $log, Global, Articles) {
+ // $scope.etime = new Date();
+
+  $scope.hstep = 1;
+  $scope.mstep = 15;
+
+  $scope.options = {
+    hstep: [1, 2, 3],
+    mstep: [1, 5, 10, 15, 25, 30]
+  };
+
+  $scope.ismeridian = true;
+  $scope.toggleMode = function() {
+    $scope.ismeridian = ! $scope.ismeridian;
+  };
+
+ $scope.update = function() {
+    var d = new Date();
+    d.setHours( 14 );
+    d.setMinutes( 0 );
+    $scope.etime = d;
+  };
+
+  $scope.changed = function () {
+    $log.log('Time changed to: ' + $scope.etime);
+  };
+
+  $scope.clear = function() {
+    $scope.etime = null;
+  };
+  
     $scope.global = Global;
 
     $scope.hasAuthorization = function(article) {
@@ -14,7 +44,9 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         var article = new Articles({
           title: this.title,
           content: this.content,
-          edate: this.edate
+          edate: this.edate,
+          etime: this.etime,
+          eplace: this.eplace
         });
         article.$save(function(response) {
           $location.path('articles/' + response._id);
@@ -23,6 +55,8 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         this.title = '';
         this.content = '';
         this.edate = '';
+        this.etime = '';
+        this.eplace = '';
       } else {
         $scope.submitted = true;
       }
@@ -127,4 +161,31 @@ angular.module('mean.articles').controller(
 });
 
 
+
+angular.module('mean.articles').controller('AccordionCtrl', function ($scope) {
+  $scope.oneAtATime = true;
+
+  $scope.groups = [
+    {
+      title: 'Dynamic Group Header - 1',
+      content: 'Dynamic Group Body - 1'
+    },
+    {
+      title: 'Dynamic Group Header - 2',
+      content: 'Dynamic Group Body - 2'
+    }
+  ];
+
+  $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+  $scope.addItem = function() {
+    var newItemNo = $scope.items.length + 1;
+    $scope.items.push('Item ' + newItemNo);
+  };
+
+  $scope.status = {
+    isFirstOpen: true,
+    isFirstDisabled: false
+  };
+});
 

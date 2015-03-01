@@ -38,6 +38,6 @@ if ((cluster.isMaster) && (process.execArgv.indexOf('--debug') < 0) && (process.
 // Creates and serves mean application
     mean.serve({ workerid: workerId /* more options placeholder*/ }, function (app, config) {
         var port = config.https && config.https.port ? config.https.port : config.http.port;
-        console.log('Mean app started on port ' + port + ' (' + process.env.NODE_ENV + ') cluster.worker.id:', workerId);
+        console.log('DCFinder app started on port ' + port + ' (' + process.env.NODE_ENV + ') cluster.worker.id:', workerId);
     });
 }

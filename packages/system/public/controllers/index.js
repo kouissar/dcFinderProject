@@ -13,19 +13,19 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
       },
       'cactus':{
         'name':'Welcome',
-        'text':'DCFinder is a social network with many features like important community places and events, real-time newsfeed, notifications, groups, events, polls, referral system etc. The system has role based permission system, allowing different stakeholders access and controls relevant to them.',
-        'author':'Rk',
+        'text':'Welcome to your CommunityCal. Please log in to see latest event or submit a new one. If you are not a member, please join today by clicking the Join button, it should take only a minute and it is free.',
+        'author':'Admin',
         'link':'http://rafikontest.blogspot.com',
-        'image':'/theme/assets/img/grand_mosque-panorama.jpg'
+        'image':'/theme/assets/img/dcf1.jpg'
       }
     };
     $scope.packages = {
-      'gmap':{
-        'name':'gmap',
-        'text':'gmap lets you add geographical information to your applications objects',
-        'author':'linnovate',
+      'events':{
+        'name':'Qcon',
+        'text':'Qcon is in town, check it out!',
+        'author':'admin',
         'link':'http://www.qed42.com',
-        'image':'/theme/assets/img/gmap.png'
+        'image':'/theme/assets/img/dcftree_sm.jpg'
       },
       'upload':{
         'name':'Upload',
