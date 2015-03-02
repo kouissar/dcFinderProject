@@ -6,7 +6,6 @@
   module.exports = {
   db: "mongodb://marrakech:Youssef12@ds063870.mongolab.com:63870/mean-prod",
   
-  //<dbuser>:<dbpassword>@ds063870.mongolab.com:63870/mean-prod
   /**
    * Database options that will be passed directly to mongoose.connect
    * Below are some examples.
