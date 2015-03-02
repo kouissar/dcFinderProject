@@ -135,5 +135,7 @@ module.exports = function(grunt) {
   // For Heroku users only.
   // Docs: https://github.com/linnovate/mean/wiki/Deploying-on-Heroku
   //grunt.registerTask('heroku:production', ['cssmin', 'uglify']);
-  grunt.registerTask('heroku:production', 'clean less mincss uglify');
+//   grunt.registerTask('heroku:production', 'clean less mincss uglify');
+  grunt.registerTask('heroku',
+    ['compass:dist', 'autoprefixer', 'imagemin']);
 };
