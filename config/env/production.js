@@ -4,7 +4,7 @@
 //   db: 'mongodb://' + (process.env.DB_PORT_27017_TCP_ADDR || 'localhost') + '/mean-prod',
   
   module.exports = {
-  db: "mongodb://marrakech:Youssef12@ds063870.mongolab.com:63870/mean-prod",
+  db: 'mongodb://marrakech:Youssef12@ds063870.mongolab.com:63870/mean-prod',
   
   //<dbuser>:<dbpassword>@ds063870.mongolab.com:63870/mean-prod
   /**
