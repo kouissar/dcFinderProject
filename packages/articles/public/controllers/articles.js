@@ -1,3 +1,4 @@
+/* global PrayTimes */
 'use strict';
 
 angular.module('mean.articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', '$log', 'Global',  'Articles',

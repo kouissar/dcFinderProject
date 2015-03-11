@@ -1,3 +1,4 @@
+/* jshint ignore:start */
  //--------------------- Copyright Block ----------------------
 /* 
 
@@ -576,3 +577,4 @@ var DMath = {
 
 var prayTimes = new PrayTimes();
 
+/* jshint ignore:end */
