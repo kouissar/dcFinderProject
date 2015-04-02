@@ -37,10 +37,10 @@ if ((cluster.isMaster) && (process.execArgv.indexOf('--debug') < 0) && (process.
     }
 // Creates and serves mean application
     mean.serve({ workerid: workerId /* more options placeholder*/ }, function (app, config) {
-    var port = process.env.PORT || CONFIG.port;
-	app.listen(port);
-//    	var port = config.https && config.https.port ? config.https.port : config.http.port;
+//     var port = process.env.PORT || CONFIG.port;
+// 	app.listen(port);
+   	var port = config.https && config.https.port ? config.https.port : config.http.port;
 
-        console.log('DCFinder app started on port ' + port + ' (' + process.env.NODE_ENV + ') cluster.worker.id:', workerId);
+        console.log('CommunityCal app started on port ' + port + ' (' + process.env.NODE_ENV + ') cluster.worker.id:', workerId);
     });
 }

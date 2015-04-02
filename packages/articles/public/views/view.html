@@ -8,6 +8,7 @@
   <div><b>Time: </b>{{article.etime | date:'shortTime'}}</div>
   <div><b>Location: </b>{{article.eplace}}</div>
   <div><b>Description: </b>{{article.content}}</div>
+  <div><b>Attending: </b>{{article.attend}}</div>
   <div data-ng-if="hasAuthorization(article)">
     <a class="btn" href="/#!/articles/{{article._id}}/edit">
       <i class="glyphicon glyphicon-edit"></i>

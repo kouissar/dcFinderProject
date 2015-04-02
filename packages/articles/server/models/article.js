@@ -35,6 +35,11 @@ var ArticleSchema = new Schema({
     required: true,
     trim: true
   },
+    attend: {
+    type: Number,
+    required: false,
+    trim: true
+  },
     eplace: {
     type: String,
     required: true,
@@ -55,6 +60,9 @@ ArticleSchema.path('title').validate(function(title) {
 ArticleSchema.path('edate').validate(function(edate) {
   return !!edate;
 }, 'Date cannot be blank');
+ArticleSchema.path('attend').validate(function(attend) {
+	  return !!attend;
+	}, 'Attend flag cannot be blank');
 ArticleSchema.path('etime').validate(function(etime) {
   return !!etime;
 }, 'Time cannot be blank');
