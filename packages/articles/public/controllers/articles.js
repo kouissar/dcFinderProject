@@ -47,8 +47,7 @@ angular.module('mean.articles').controller(
 					$scope.hasAuthorization = function(article) {
 						if (!article || !article.user)
 							return false;
-						return $scope.global.isAdmin
-								|| article.user._id === $scope.global.user._id;
+						return $scope.global.isAdmin || article.user._id === $scope.global.user._id;
 					};
 
 					$scope.create = function(isValid) {
@@ -148,8 +147,7 @@ angular
 					var unit = 'imperial';
 					// var zip = firstName;
 					var days = '7';
-					var url = base + zip + ',USA&mode=json&units=' + unit
-							+ '&cnt=' + days;
+					var url = base + zip + ',USA&mode=json&units=' + unit + '&cnt=' + days;
 					// example URL
 					// "http://api.openweathermap.org/data/2.5/forecast/daily?q=20876,USA&mode=json&units=imperial&cnt=7"
 					$http.get(url).success(function(response) {
@@ -157,8 +155,7 @@ angular
 					});
 					// Get icon image url
 					$scope.getIconImageUrl = function(iconName) {
-						return (iconName ? $scope.iconBaseUrl + iconName
-								+ '.png' : '');
+						return (iconName ? $scope.iconBaseUrl + iconName + '.png' : '');
 					};
 				});
 
@@ -168,9 +165,7 @@ angular.module('mean.articles').filter(
 		function() {
 			return function(timestamp) {
 				var date = new Date(timestamp * 1000);
-				var dateObject = date.getFullYear() + '-'
-						+ ('0' + (date.getMonth() + 1)).slice(-2) + '-'
-						+ ('0' + date.getDate()).slice(-2);
+				var dateObject = date.getFullYear() + '-'	+ ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2);
 				return dateObject;
 			};
 		});
@@ -189,12 +184,10 @@ angular
 							'Isha', 'Midnight' ];
 
 					var html = '<table class="table table-hover" id="timetable">';
-					html += '<tr class="success"><th colspan="2">'
-							+ date.toLocaleDateString() + '</th></tr>';
+					html += '<tr class="success"><th colspan="2">' + date.toLocaleDateString() + '</th></tr>';
 					for ( var i in list) {
 						html += '<tr><td><b>' + list[i] + '</b></td>';
-						html += '<td>' + times[list[i].toLowerCase()]
-								+ '</td></tr>';
+						html += '<td>' + times[list[i].toLowerCase()] + '</td></tr>';
 					}
 					html += '</table>';
 					document.getElementById('table').innerHTML = html;
