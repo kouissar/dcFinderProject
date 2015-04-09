@@ -116,6 +116,7 @@ angular.module('mean.articles').controller(
 						article.$update(function() {
 							$location.path('articles/' + article._id);
 						});
+						alert('Attend status updated!');
 
 					};
 

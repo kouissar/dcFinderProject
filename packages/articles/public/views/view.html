@@ -17,4 +17,7 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
+  <div ng-if="article !== undefined" ng-include="'comments/views/index.html'" data-ng-controller="CommentsController" data-ng-init="findComments(article, 2)"/>
 </section>
+<!-- <div ng-if="article !== undefined" ng-include="'comments/views/index.html'" data-ng-controller="CommentsController" data-ng-init="findComments(article, 2)"/>
+ -->
